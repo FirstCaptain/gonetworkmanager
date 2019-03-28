@@ -88,7 +88,7 @@ func (n *networkManager) GetActiveConnections() []ActiveConnection {
 
 func (n *networkManager) ActivateWiredConnection(c Connection, d Device) ActiveConnection {
 	var opath dbus.ObjectPath
-	n.call(&opath, NetworkManagerActivateConnection, c.GetPath(), d.GetPath())
+	n.call(&opath, NetworkManagerActivateConnection, c.GetPath(), d.GetPath(), dbus.ObjectPath("/"))
 	return nil
 }
 
